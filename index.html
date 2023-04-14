@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" />
+	<link rel="stylesheet" href="styleindex.css">
+</head>
+<body>
+	<header>
+		<div class="logo">
+			<img src="https://seeklogo.com/images/M/maternal-disaster-logo-B3581A0DAA-seeklogo.com.png" alt="Maternal Logo">
+		</div>
+		<nav>
+			<ul>
+				<li><a href="#">Home</a></li>
+                <li><a href="#">Our Product</a></li>
+				<li><a href="#">About Us</a></li>
+				<li><a href="#">Services</a></li>
+				<li><a href="#">Contact Us</a></li>
+                <li><a href="#">Login / SignUp</a></li>
+			</ul>
+		</nav>
+	</header>
+
+    <div class="row">
+        <img src="Assets/gb1.png" class="newitem" alt="gambar1" width="930px" height="930px">
+        <img src="Assets/gb2.png" class="newitem" alt="gambar2" height="930px">
+        <img src="Assets/gb3.png" class="newitem" alt="gambar3" height="930px">
+    </div>
+    <h2>RECOMENDATION</h2>
+    <hr>
+    <div class="recomendation">
+        <img src="Assets/rec1.png" alt="Recomendation 1">
+        <img src="Assets/rec2.png" alt="Recomendation 2">
+        <img src="Assets/rec3.png" alt="Recomendation 3">
+        <img src="Assets/rec4.png" alt="Recomendation 4">
+        <img src="Assets/rec5.png" alt="Recomendation 5">
+        <img src="Assets/rec1.png" alt="Recomendation 1">
+    </div>
+    <br>
+    <h2>FEATURED PRODUCTS</h2>
+    <hr>
+    <div class="product1">
+        <div class="card">
+            <img src="Assets/kaos1.jpg" class="image_product" alt="Product 1">
+            <h3>Product 1</h3>
+            <p>Rp.80,000</p>
+        </div>
+        <div class="card">
+            <img src="Assets/kaos2.jpg" class="image_product" alt="Product 2">
+            <h3>Product 2</h3>
+            <p>Rp.80,000</p>
+        </div>
+        <div class="card">
+            <img src="Assets/kaos3.jpg" class="image_product" alt="Product 3">
+            <h3>Product 3</h3>
+            <p>Rp.80,000</p>
+        </div>
+        <div class="card">
+            <img src="Assets/kaos4.jpg" class="image_product" alt="Product 4">
+            <h3>Product 4</h3>
+            <p>Rp.80,000</p>
+        </div>
+    </div>
+    <hr>
+    <div class="product1">
+        <div class="card">
+            <img src="Assets/jaket1.jpg" class="image_product" alt="Product 1">
+            <h3>Product 1</h3>
+            <p>Rp.80,000</p>
+        </div>
+        <div class="card">
+            <img src="Assets/jaket2.jpg" class="image_product" alt="Product 2">
+            <h3>Product 2</h3>
+            <p>Rp.80,000</p>
+        </div>
+        <div class="card">
+            <img src="Assets/jaket3.jpg" class="image_product" alt="Product 3">
+            <h3>Product 3</h3>
+            <p>Rp.80,000</p>
+        </div>
+        <div class="card">
+            <img src="Assets/jaket4.jpg" class="image_product" alt="Product 4">
+            <h3>Product 4</h3>
+            <p>Rp.80,000</p>
+        </div>
+    </div>
+    <hr>
+    <div class="product1">
+        <div class="card">
+            <img src="Assets/kemeja1.jpg" class="image_product" alt="Product 1">
+            <h3>Product 1</h3>
+            <p>Rp.80,000</p>
+        </div>
+        <div class="card">
+            <img src="Assets/kemeja2.jpg" class="image_product" alt="Product 2">
+            <h3>Product 2</h3>
+            <p>Rp.80,000</p>
+        </div>
+        <div class="card">
+            <img src="Assets/kemeja3.jpg" class="image_product" alt="Product 3">
+            <h3>Product 3</h3>
+            <p>Rp.80,000</p>
+        </div>
+        <div class="card">
+            <img src="Assets/kemeja4.jpg" class="image_product" alt="Product 4">
+            <h3>Product 4</h3>
+            <p>Rp.80,000</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container"> 
+            <button style="background-image: url(Assets/discordlogo.png);" class="circle-logo-button"></button>
+            <button style="background-image: url(Assets/logowhatsapp.png);"class="circle-logo-button"></button>
+            <button style="background-image: url(Assets/tweterlogo.png);"class="circle-logo-button"></button>
+            <button style="background-image: url(Assets/facebooklogo.png);"class="circle-logo-button"></button>    
+        </div>
+    </footer>
+    <!--For Script, ETC -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('.recomendation').slick({
+              arrows: true,
+              dots: true,
+              autoplay: true,
+              variableWidth: true,
+              infinite: true,
+              speed: 300,
+              autoplaySpeed: 4000,
+              slidesToShow: 2,
+              slidesToScroll: 2
+            });
+        });
+    </script>
+
+    <script>
+      $(document).ready(function(){
+        $('.product1').slick({
+          arrows: true,
+          dots: true,
+          autoplay: true,
+          infinite: false,
+          speed: 300,
+          autoplaySpeed: 4000,
+          slidesToShow: 2,
+          slidesToScroll: 2
+        });
+      });
+    </script>
+</body>
+</html>
