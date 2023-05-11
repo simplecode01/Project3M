@@ -27,7 +27,7 @@ Route::resource('/kategori', KategoriController::class)->middleware('auth');
 
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('cms.cms-dashboard.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
