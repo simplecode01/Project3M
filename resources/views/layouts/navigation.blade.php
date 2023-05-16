@@ -18,11 +18,11 @@
                     <x-nav-link :href="url('kategori')" :active="request()->routeIs('kategori')">
                         {{ __('Kategori') }}
                     </x-nav-link>
+                    <x-nav-link :href="url('bahan')" :active="request()->routeIs('bahan')">
+                        {{ __('Bahan') }}
+                    </x-nav-link>
                     <x-nav-link :href="url('dashboard')" :active="request()->routeIs('produk')">
                         {{ __('Produk') }}
-                    </x-nav-link>
-                    <x-nav-link :href="url('dashboard')" :active="request()->routeIs('bahan')">
-                        {{ __('Bahan') }}
                     </x-nav-link>
                     <x-nav-link :href="url('dashboard')" :active="request()->routeIs('user')">
                         {{ __('User') }}
@@ -93,11 +93,11 @@
             <x-responsive-nav-link :href="url('kategori')" :active="request()->routeIs('kategori')">
                 {{ __('Kategori') }}
             </x-responsive-nav-link>
+            <x-responsive-nav-link :href="url('bahan')" :active="request()->routeIs('bahan')">
+                {{ __('Bahan') }}
+            </x-responsive-nav-link>
             <x-responsive-nav-link :href="url('dashboard')" :active="request()->routeIs('produk')">
                 {{ __('Produk') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link :href="url('dashboard')" :active="request()->routeIs('bahan')">
-                {{ __('Bahan') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="url('dashboard')" :active="request()->routeIs('user')">
                 {{ __('User') }}

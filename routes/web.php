@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WebController;
+use App\Http\Controllers\BahanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\KategoriController;
 
@@ -24,6 +25,7 @@ Route::get('/', [WebController::class, 'home']);
 
 
 Route::resource('/kategori', KategoriController::class)->middleware('auth');
+Route::resource('/bahan', BahanController::class)->middleware('auth');
 
 
 Route::get('/dashboard', function () {
