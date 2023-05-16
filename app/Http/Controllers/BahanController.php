@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bahan;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\StoreBahanRequest;
 use App\Http\Requests\UpdateBahanRequest;
@@ -94,8 +95,15 @@ class BahanController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Bahan $bahan)
+    public function destroy($id)
     {
-        //
+        $test = DB::table('bahans')->select('foto')
+            ->where('id', $id)
+            ->get();
+        if ($test[0]->foto) {
+            Storage::delete($test[0]->foto);
+        }
+        Bahan::destroy($id);
+        return redirect('/bahan')->with('delete', 'your data have been deleted');
     }
 }

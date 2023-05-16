@@ -11,9 +11,9 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
 
-                    <form action="{{ url('bahan') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ url('bahan/' . $bahans->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
-
+                        @method('put')
                         <div>
                             <x-input-label for="nama_bahan" :value="__('Bahan')" />
                             <x-text-input id="nama_bahan" class="block mt-1 w-full" type="text" name="nama_bahan"
@@ -70,7 +70,7 @@
                         <div>
                             <br>
                             <x-primary-button class="ml-4">
-                                {{ __('Tambah') }}
+                                {{ __('Update') }}
                             </x-primary-button>
                         </div>
                     </form>

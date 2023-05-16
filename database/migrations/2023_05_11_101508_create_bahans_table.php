@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('bahans', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_bahan')->unique();
-            $table->string('kode_bahan')->unique();
+            $table->string('nama_bahan');
+            $table->string('kode_bahan');
             $table->string('dekripsi_bahan');
             $table->string('foto')->nullable();
 
