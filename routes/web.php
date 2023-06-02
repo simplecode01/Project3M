@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WebController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\BahanController;
+use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\KategoriController;
 
@@ -23,9 +25,10 @@ Route::get('/', [WebController::class, 'home']);
 // Route::get('/portofolio', [WebController::class, 'portofolio']);
 
 
-
+Route::resource('/user', UserController::class)->middleware('auth');
 Route::resource('/kategori', KategoriController::class)->middleware('auth');
 Route::resource('/bahan', BahanController::class)->middleware('auth');
+Route::resource('/produk', ProdukController::class)->middleware('auth');
 
 
 Route::get('/dashboard', function () {
