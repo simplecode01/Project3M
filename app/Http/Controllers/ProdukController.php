@@ -16,7 +16,8 @@ class ProdukController extends Controller
      */
     public function index()
     {
-        $produks = produk::all();
+        // $produks = produk::all();
+        $produks = DB::table('produks')->paginate(5);
         return view('cms.cms-produk.index', compact('produks'));
     }
 

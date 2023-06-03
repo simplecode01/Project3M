@@ -42,6 +42,8 @@
                                 </tr>
                             </thead>
                             <tbody>
+
+
                                 @forelse ($kategoris as $kategori)
                                     <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
 
@@ -72,7 +74,7 @@
                                 @endforelse
                             </tbody>
                         </table>
-
+                        {{ $kategoris->links() }}
                     </div>
 
                 </div>

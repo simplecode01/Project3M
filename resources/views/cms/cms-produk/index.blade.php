@@ -72,7 +72,7 @@
                                 @endforelse
                             </tbody>
                         </table>
-
+                        {{ $produks->links() }}
                     </div>
 
                 </div>

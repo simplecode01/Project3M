@@ -73,7 +73,7 @@
                                 @endforelse
                             </tbody>
                         </table>
-
+                        {{ $bahans->links() }}
                     </div>
 
                 </div>

@@ -15,7 +15,8 @@ class KategoriController extends Controller
      */
     public function index()
     {
-        $kategoris = kategori::all();
+        // $kategoris = kategori::all();
+        $kategoris = DB::table('kategoris')->paginate(5);
         return view('cms.cms-kategori.index', compact('kategoris'));
     }
 

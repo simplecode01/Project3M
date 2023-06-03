@@ -15,8 +15,8 @@ class BahanController extends Controller
      */
     public function index()
     {
-        $bahans = bahan::all();
-        // return view('cms.cms-bahan.index');
+        // $bahans = bahan::all();
+        $bahans = DB::table('bahans')->paginate(5);
         return view('cms.cms-bahan.index', compact('bahans'));
     }
 
