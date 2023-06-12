@@ -27,13 +27,12 @@
                             <x-input-error :messages="$errors->get('kode_bahan')" class="mt-2" />
                         </div>
                         <div>
-                            <x-input-label for="dekripsi_bahan" :value="__('Dekripsi')" />
+                            <x-input-label for="dekripsi_bahan" :value="__('Deskripsi')" />
                             <x-text-input id="dekripsi_bahan" class="block mt-1 w-full" type="text"
                                 name="dekripsi_bahan" :value="old('dekripsi_bahan')" autofocus autocomplete="off" />
                             <x-input-error :messages="$errors->get('dekripsi_bahan')" class="mt-2" />
                         </div>
                         <div>
-
                             <x-input-label for="foto" :value="__('Foto')" />
                             <img class="foto-preview img-fluid mb-3" width="250px">
                             <x-text-input id="foto" class="block mt-1 w-full" type="file" name="foto"

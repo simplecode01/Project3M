@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Produk;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Kategori extends Model
 {
@@ -15,4 +16,9 @@ class Kategori extends Model
         'foto',
 
     ];
+
+    public function produks()
+    {
+        return $this->hasMany(Produk::class);
+    }
 }

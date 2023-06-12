@@ -7,16 +7,23 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\StoreBahanRequest;
 use App\Http\Requests\UpdateBahanRequest;
+use Illuminate\Http\Request;
 
 class BahanController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        // $bahans = bahan::all();
-        $bahans = DB::table('bahans')->paginate(5);
+        if ($request->has('cari')) {
+            $bahans = Bahan::where('nama_bahan', 'LIKE', '%' . $request->cari . '%')->paginate(5);
+            $bahans->appends($request->all());
+        } else {
+            $bahans = Bahan::paginate(5);
+        }
+
+
         return view('cms.cms-bahan.index', compact('bahans'));
     }
 
@@ -36,9 +43,9 @@ class BahanController extends Controller
         $ValidatedData = $request->validate([
 
             'nama_bahan' => 'required|regex:/^[a-zA-Z ]+$/',
-            'kode_bahan' => 'required',
+            'kode_bahan' => 'required|unique:bahans',
             'dekripsi_bahan' => 'required',
-            'foto' => 'image|file|max:2048',
+            'foto' => 'required|image|file|max:2048',
         ]);
 
         if ($request->file('foto')) {

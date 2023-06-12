@@ -20,9 +20,14 @@ use App\Http\Controllers\KategoriController;
 */
 
 Route::get('/', [WebController::class, 'home']);
-// Route::get('/about-us', [WebController::class, 'team']);
-// Route::get('/contact-us', [WebController::class, 'contact']);
-// Route::get('/portofolio', [WebController::class, 'portofolio']);
+Route::get('/kategoriUser', [WebController::class, 'kategori']);
+Route::get('/produkUser', [WebController::class, 'produk']);
+Route::get('/bahanUser', [WebController::class, 'bahan']);
+
+Route::get('/kategoriUser/{params}', [WebController::class, 'kategoriProduk']);
+
+// Route::get('/bahanUser/{params}', [WebController::class, 'bahanProduk'])->name('bahanUser.show');
+
 
 
 Route::resource('/user', UserController::class)->middleware('auth');

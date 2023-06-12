@@ -7,16 +7,24 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\StoreKategoriRequest;
 use App\Http\Requests\UpdateKategoriRequest;
+use Illuminate\Http\Request;
 
 class KategoriController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        // $kategoris = kategori::all();
-        $kategoris = DB::table('kategoris')->paginate(5);
+
+        if ($request->has('cari')) {
+
+            $kategoris = Kategori::where('nama_kategori', 'LIKE', '%' . $request->cari . '%')->paginate(5);
+            $kategoris->appends($request->all());
+        } else {
+            $kategoris = Kategori::paginate(5);
+        }
+
         return view('cms.cms-kategori.index', compact('kategoris'));
     }
 
@@ -36,9 +44,9 @@ class KategoriController extends Controller
 
         $ValidatedData = $request->validate([
 
-            'nama_kategori' => 'required|regex:/^[a-zA-Z ]+$/',
+            'nama_kategori' => 'required|unique:kategoris|regex:/^[a-zA-Z ]+$/',
             'dekripsi_kategori' => 'required',
-            'foto' => 'image|file|max:2048',
+            'foto' => 'required|image|file|max:2048',
         ]);
 
         if ($request->file('foto')) {

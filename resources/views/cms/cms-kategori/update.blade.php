@@ -23,7 +23,7 @@
                             <x-input-error :messages="$errors->get('nama_kategori')" class="mt-2" />
                         </div>
                         <div>
-                            <x-input-label for="dekripsi_kategori" :value="__('Dekripsi')" />
+                            <x-input-label for="dekripsi_kategori" :value="__('Deskripsi')" />
                             <x-text-input id="dekripsi_kategori" class="block mt-1 w-full" type="text"
                                 name="dekripsi_kategori"
                                 value="{{ $kategoris->dekripsi_kategori == $kategoris->dekripsi_kategori ? $kategoris->dekripsi_kategori : old('dekripsi_kategori') }}"

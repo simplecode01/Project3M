@@ -8,16 +8,23 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\StoreProdukRequest;
 use App\Http\Requests\UpdateProdukRequest;
+use Illuminate\Http\Request;
 
 class ProdukController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        // $produks = produk::all();
-        $produks = DB::table('produks')->paginate(5);
+        if ($request->has('cari')) {
+            $nyari = Produk::all();
+            $produks = Produk::where('nama_produk', 'LIKE', '%' . $request->cari . '%')->paginate(5);
+            $produks->appends($request->all());
+        } else {
+            $produks = Produk::paginate(5);
+        }
+
         return view('cms.cms-produk.index', compact('produks'));
     }
 
@@ -40,7 +47,7 @@ class ProdukController extends Controller
             'nama_produk' => 'required|regex:/^[a-zA-Z ]+$/',
             'id_kategori' => 'required',
             'dekripsi_produk' => 'required',
-            'foto' => 'image|file|max:2048',
+            'foto' => 'required|image|file|max:2048',
         ]);
 
         if ($request->file('foto')) {

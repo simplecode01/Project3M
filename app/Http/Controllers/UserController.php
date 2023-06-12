@@ -4,24 +4,24 @@ namespace App\Http\Controllers;
 
 
 use App\Models\User;
-use Illuminate\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Auth\Events\Registered;
-use App\Providers\RouteServiceProvider;
-
 
 class UserController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        // $users = User::all();
-        $users = DB::table('users')->paginate(5);
+        if ($request->has('cari')) {
+            $users = User::where('name', 'LIKE', '%' . $request->cari . '%')->paginate(5);
+            $users->appends($request->all());
+        } else {
+            $users = User::paginate(5);
+        }
         return view('cms.cms-user.index', compact('users'));
     }
 

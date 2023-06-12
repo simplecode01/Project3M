@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            <a href="/kategori"> {{ __('Kategori') }}
+            <a href="/produk"> {{ __('Produk') }}
             </a>
         </h2>
     </x-slot>
@@ -35,7 +35,7 @@
                         </div>
 
                         <div>
-                            <x-input-label for="dekripsi_produk" :value="__('Dekripsi')" />
+                            <x-input-label for="dekripsi_produk" :value="__('Deskripsi')" />
                             <x-text-input id="dekripsi_produk" class="block mt-1 w-full" type="text"
                                 name="dekripsi_produk"
                                 value="{{ $produks->dekripsi_produk == $produks->dekripsi_produk ? $produks->dekripsi_produk : old('dekripsi_produk') }}"

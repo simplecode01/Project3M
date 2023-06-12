@@ -17,7 +17,12 @@
 
                     <a href="/kategori/create" class="btn btn-secondary">{{ __('KATEGORI') }}
                     </a>
-
+                    <div align="right" class="input-group rounded">
+                        <form action="/kategori" method="GET">
+                            <input type="Cari" id="cari" name="cari" class="form-control rounded"
+                                placeholder="Cari" aria-label="Cari" aria-describedby="search-addon" />
+                        </form>
+                    </div>
                     <div class="relative overflow-x-auto">
 
                         <div class="">
@@ -30,41 +35,41 @@
                                 </div>
                             </div>
                         </div>
-                        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 mb-4">
                             <thead
                                 class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                 <tr>
-                                    <th scope="col" class="px-6 py-3">ID</th>
+                                    <th scope="col" class="px-6 py-3">#</th>
                                     <th scope="col" class="px-6 py-3">Kategori</th>
-                                    <th scope="col" class="px-6 py-3">Dekripsi</th>
+                                    <th scope="col" class="px-6 py-3">Deskripsi</th>
                                     <th scope="col" class="px-6 py-3">Foto</th>
-                                    <th scope="col" class="px-6 py-3">Action</th>
+                                    <th scope="col" class="px-6 py-3">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
 
 
-                                @forelse ($kategoris as $kategori)
+                                @forelse ($kategoris as $key=>$kategori)
                                     <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
 
-                                        <td class="px-6 py-4">{{ $kategori->id }}</td>
+                                        <td class="px-6 py-4">{{ $kategoris->firstItem() + $key }}</td>
                                         <td class="px-6 py-4">{{ $kategori->nama_kategori }}</td>
                                         <td class="px-6 py-4">{{ $kategori->dekripsi_kategori }}</td>
                                         <td class="px-6 py-4"><img src="storage/{{ $kategori->foto }}" class="rounded"
                                                 width="100px"></td>
 
                                         <td class="px-6 py-4">
-                                            <x-primary-button class="ml-4">
+                                            <button class="ml-4">
                                                 <a href="/kategori/{{ $kategori->id }}/edit"> {{ __('Edit') }}</a>
-                                            </x-primary-button>
+                                            </button>
                                             <form action="/kategori/{{ $kategori->id }}" method="post"
                                                 class="d-inline">
                                                 @method('delete')
                                                 @csrf
-                                                <x-primary-button class="ml-4"
-                                                    onclick="return confirm('Are You sure?')">
-                                                    {{ __('Delate') }}
-                                                </x-primary-button>
+                                                <button class="ml-4"
+                                                    onclick="return confirm('Yakin ingin menghapus data?')">
+                                                    {{ __('Delete') }}
+                                                </button>
                                             </form>
                                         </td>
 

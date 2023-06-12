@@ -29,7 +29,7 @@
                             <x-input-error :messages="$errors->get('kode_bahan')" class="mt-2" />
                         </div>
                         <div>
-                            <x-input-label for="dekripsi_bahan" :value="__('Dekripsi')" />
+                            <x-input-label for="dekripsi_bahan" :value="__('Deskripsi')" />
                             <x-text-input id="dekripsi_bahan" class="block mt-1 w-full" type="text"
                                 name="dekripsi_bahan"
                                 value="{{ $bahans->dekripsi_bahan == $bahans->dekripsi_bahan ? $bahans->dekripsi_bahan : old('dekripsi_bahan') }}"
