@@ -62,7 +62,7 @@
 
                                         <td class="px-6 py-4">
                                             <button class="ml-4">
-                                                <a href="/kategori/{{ $kategori->id }}/edit"> {{ __('Edit') }}</a>
+                                                <a href="/kategori/{{ $kategori->id }}/edit"> {{ __('Ubah') }}</a>
                                             </button>
                                             <form action="/kategori/{{ $kategori->id }}" method="post"
                                                 class="d-inline">
@@ -70,7 +70,7 @@
                                                 @csrf
                                                 <button class="ml-4"
                                                     onclick="return confirm('Yakin ingin menghapus data?')">
-                                                    {{ __('Delete') }}
+                                                    {{ __('Hapus') }}
                                                 </button>
                                             </form>
                                         </td>

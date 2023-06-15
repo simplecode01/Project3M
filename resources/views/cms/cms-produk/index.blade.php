@@ -65,14 +65,14 @@
 
                                         <td class="px-6 py-4">
                                             <button class="ml-4">
-                                                <a href="/produk/{{ $produk->id }}/edit"> {{ __('Edit') }}</a>
+                                                <a href="/produk/{{ $produk->id }}/edit"> {{ __('Ubah') }}</a>
                                             </button>
                                             <form action="/produk/{{ $produk->id }}" method="post" class="d-inline">
                                                 @method('delete')
                                                 @csrf
                                                 <button class="ml-4"
                                                     onclick="return confirm('Yakin ingin menghapus data?')">
-                                                    {{ __('Delete') }}
+                                                    {{ __('Hapus') }}
                                                 </button>
                                             </form>
                                         </td>
