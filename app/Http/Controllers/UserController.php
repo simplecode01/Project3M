@@ -53,7 +53,7 @@ class UserController extends Controller
         event(new Registered($user));
 
         Auth::login($user);
-        return redirect('/user')->with('tambah', ' User sudah ditambahkan');
+        return redirect('/user')->with('tambah', ' Data berhasil ditambahkan');
         // return redirect(RouteServiceProvider::HOME);
     }
 }

@@ -2,9 +2,9 @@
 
 {{-- <style>
     img {
-        border: 1px solid #000000;
-    } --}}
-</style>
+        border: 10px solid #000000;
+    }
+</style> --}}
 
 @section('container')
     <section>

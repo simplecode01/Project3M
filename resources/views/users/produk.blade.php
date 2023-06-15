@@ -1,7 +1,7 @@
 @extends('layouts.main')
 {{-- <style>
     img {
-        border: 2px solid #000000;
+        border: 1px solid #000000;
     }
 </style> --}}
 @section('container')

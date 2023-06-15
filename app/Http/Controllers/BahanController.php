@@ -42,9 +42,9 @@ class BahanController extends Controller
     {
         $ValidatedData = $request->validate([
 
-            'nama_bahan' => 'required|regex:/^[a-zA-Z ]+$/',
-            'kode_bahan' => 'required|unique:bahans',
-            'dekripsi_bahan' => 'required',
+            'nama_bahan' => 'required|max:255|regex:/^[a-zA-Z ]+$/',
+            'kode_bahan' => 'required|max:255|unique:bahans',
+            'dekripsi_bahan' => 'required|max:255',
             'foto' => 'required|image|file|max:2048',
         ]);
 
@@ -54,7 +54,7 @@ class BahanController extends Controller
 
         Bahan::create($ValidatedData);
 
-        return redirect('/bahan')->with('tambah', ' Data sudah ditambahkan');
+        return redirect('/bahan')->with('tambah', ' Data berhasil ditambahkan');
     }
 
     // /**
@@ -81,9 +81,9 @@ class BahanController extends Controller
     {
         $ValidatedData = $request->validate([
 
-            'nama_bahan' => 'required|regex:/^[a-zA-Z ]+$/',
-            'kode_bahan' => 'required',
-            'dekripsi_bahan' => 'required',
+            'nama_bahan' => 'required|max:255|regex:/^[a-zA-Z ]+$/',
+            'kode_bahan' => 'required|max:255',
+            'dekripsi_bahan' => 'required|max:255',
             'foto' => 'image|file|max:2048',
         ]);
 
@@ -96,7 +96,7 @@ class BahanController extends Controller
 
         Bahan::where('id', $id)->update($ValidatedData);
 
-        return redirect('/bahan')->with('update', 'Data sudah diUpdate');
+        return redirect('/bahan')->with('update', 'Data berhasil diperbarui');
     }
 
     /**
@@ -111,6 +111,6 @@ class BahanController extends Controller
             Storage::delete($test[0]->foto);
         }
         Bahan::destroy($id);
-        return redirect('/bahan')->with('delete', 'your data have been deleted');
+        return redirect('/bahan')->with('delete', 'Data berhasil dihapus');
     }
 }

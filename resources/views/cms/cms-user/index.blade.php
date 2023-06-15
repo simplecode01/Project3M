@@ -15,8 +15,11 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
 
 
-                    <a href="/user/create" class="btn btn-secondary">{{ __('USER') }}
-                    </a>
+                    <x-primary-button>
+                        <a href="/user/create" class="btn btn-secondary">{{ __('Tambah Data') }}
+                        </a>
+                    </x-primary-button>
+
                     <div align="right" class="input-group rounded">
                         <form action="/user" method="GET">
                             <input type="Cari" id="cari" name="cari" class="form-control rounded"

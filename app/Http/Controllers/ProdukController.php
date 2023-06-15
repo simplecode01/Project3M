@@ -44,9 +44,9 @@ class ProdukController extends Controller
     {
 
         $ValidatedData = $request->validate([
-            'nama_produk' => 'required|regex:/^[a-zA-Z ]+$/',
+            'nama_produk' => 'required|max:255|regex:/^[a-zA-Z ]+$/',
             'id_kategori' => 'required',
-            'dekripsi_produk' => 'required',
+            'dekripsi_produk' => 'required|max:255',
             'foto' => 'required|image|file|max:2048',
         ]);
 
@@ -84,9 +84,9 @@ class ProdukController extends Controller
     {
 
         $ValidatedData = $request->validate([
-            'nama_produk' => 'required|regex:/^[a-zA-Z ]+$/',
+            'nama_produk' => 'required|max:255|regex:/^[a-zA-Z ]+$/',
             'id_kategori' => 'required',
-            'dekripsi_produk' => 'required',
+            'dekripsi_produk' => 'required|max:255',
             'foto' => 'image|file|max:2048',
         ]);
         if ($request->file('foto')) {
@@ -98,7 +98,7 @@ class ProdukController extends Controller
 
         Produk::where('id', $id)->update($ValidatedData);
 
-        return redirect('/produk')->with('update', 'Data berhasil diUpdate');
+        return redirect('/produk')->with('update', 'Data berhasil diperbarui');
     }
 
     /**

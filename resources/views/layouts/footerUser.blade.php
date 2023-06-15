@@ -2,7 +2,7 @@
      <div class="container px-5">
          <div class="row align-items-center justify-content-between flex-column flex-sm-row">
              <div class="col-auto">
-                 <div class="small m-0 text-white">&copy; 2023 YangPentingYakin</div>
+                 <div class="small m-0 text-white">&copy; 2023 Tel-U Want</div>
              </div>
              <div class="col-auto">
 
@@ -12,7 +12,7 @@
 
                  <!-- Whatsapp -->
                  <a class="btn btn-outline-light btn-floating m-1"
-                     href="https://wa.me/6282136428374/?text=Hallo ada yang ingin saya tanyakan !!" target="_blank"
+                     href="https://wa.me/62895703076986/?text=Hallo ada yang ingin saya tanyakan !!" target="_blank"
                      role="button"><i class="fab fa-whatsapp"></i></a>
 
                  <!-- Instagram -->

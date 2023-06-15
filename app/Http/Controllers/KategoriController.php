@@ -44,8 +44,8 @@ class KategoriController extends Controller
 
         $ValidatedData = $request->validate([
 
-            'nama_kategori' => 'required|unique:kategoris|regex:/^[a-zA-Z ]+$/',
-            'dekripsi_kategori' => 'required',
+            'nama_kategori' => 'required|max:255|unique:kategoris|regex:/^[a-zA-Z ]+$/',
+            'dekripsi_kategori' => 'required|max:255',
             'foto' => 'required|image|file|max:2048',
         ]);
 
@@ -55,7 +55,7 @@ class KategoriController extends Controller
 
         Kategori::create($ValidatedData);
 
-        return redirect('/kategori')->with('tambah', ' Data sudah ditambahkan');
+        return redirect('/kategori')->with('tambah', ' Data berhasil ditambahkan');
     }
 
     // /**
@@ -83,8 +83,8 @@ class KategoriController extends Controller
     {
         $ValidatedData = $request->validate([
 
-            'nama_kategori' => 'required|regex:/^[a-zA-Z ]+$/',
-            'dekripsi_kategori' => 'required',
+            'nama_kategori' => 'required|max:255|regex:/^[a-zA-Z ]+$/',
+            'dekripsi_kategori' => 'required|max:255',
             'foto' => 'image|file|max:2048',
         ]);
 
@@ -97,7 +97,7 @@ class KategoriController extends Controller
 
         Kategori::where('id', $id)->update($ValidatedData);
 
-        return redirect('/kategori')->with('update', 'Data sudah diUpdate');
+        return redirect('/kategori')->with('update', 'Data berhasil diperbarui');
     }
 
     /**
@@ -112,6 +112,6 @@ class KategoriController extends Controller
             Storage::delete($test[0]->foto);
         }
         Kategori::destroy($id);
-        return redirect('/kategori')->with('delete', 'your data have been deleted');
+        return redirect('/kategori')->with('delete', 'Data berhasil dihapus');
     }
 }

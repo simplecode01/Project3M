@@ -14,9 +14,11 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
 
+                    <x-primary-button>
+                        <a href="/bahan/create" class="btn btn-secondary">{{ __('Tambah Data') }}
+                        </a>
+                    </x-primary-button>
 
-                    <a href="/bahan/create" class="btn btn-secondary">{{ __('BAHAN') }}
-                    </a>
                     <div align="right" class="input-group rounded">
                         <form action="/bahan" method="GET">
                             <input type="Cari" id="cari" name="cari" class="form-control rounded"

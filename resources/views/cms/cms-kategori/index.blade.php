@@ -15,8 +15,10 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
 
 
-                    <a href="/kategori/create" class="btn btn-secondary">{{ __('KATEGORI') }}
-                    </a>
+                    <x-primary-button>
+                        <a href="/kategori/create" class="btn btn-secondary">{{ __('Tambah Data') }}
+                        </a>
+                    </x-primary-button>
                     <div align="right" class="input-group rounded">
                         <form action="/kategori" method="GET">
                             <input type="Cari" id="cari" name="cari" class="form-control rounded"
